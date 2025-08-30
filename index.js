@@ -1,6 +1,5 @@
 const express = require('express');
-const puppeteer = require('puppeteer-core');
-const { executablePath } = require('puppeteer');
+const puppeteer = require('puppeteer');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const app = express();
@@ -118,18 +117,30 @@ let webSearchEnabled = false;
 
 async function launchBrowser() {
   console.log('Launching Puppeteer...');
+  
+  // Create user data directory for persistent sessions
+  const userDataDir = path.join(__dirname, 'browser-session');
+  if (!fs.existsSync(userDataDir)) {
+    fs.mkdirSync(userDataDir, { recursive: true });
+  }
+
   browser = await puppeteer.launch({
     headless: false,
-    executablePath: executablePath(),
-    args: ['--start-maximized'],
+    userDataDir: userDataDir, // This enables session persistence
+    args: [
+      '--start-maximized', 
+      '--no-sandbox', 
+      '--disable-setuid-sandbox',
+      '--disable-web-security', // Sometimes needed for persistent sessions
+      '--disable-features=VizDisplayCompositor'
+    ],
     defaultViewport: null,
   });
 
   page = await browser.newPage();
-  await page.goto('https://lumo.proton.me/chat', { waitUntil: 'networkidle2' });
+  await page.goto('https://lumo.proton.me', { waitUntil: 'networkidle2' });
 
-  console.log('Please log in manually to Proton Lumo in the opened browser.');
-
+  // Check if already logged in
   const loginCheckInterval = setInterval(async () => {
     try {
       const dropdownSelector = 'button[data-testid="heading:userdropdown"]';
@@ -137,10 +148,18 @@ async function launchBrowser() {
       if (exists) {
         loggedIn = true;
         clearInterval(loginCheckInterval);
-        console.log('✅ Login detected!');
+        console.log('✅ Already logged in! Session restored from previous session.');
       }
     } catch {}
   }, 2000);
+
+  // Give it some time to check for existing login
+  setTimeout(() => {
+    if (!loggedIn) {
+      console.log('🔑 Please log in manually to Proton Lumo in the opened browser.');
+      console.log('💡 Your login will be remembered for next time!');
+    }
+  }, 5000);
 }
 
 const validateToken = (req, res, next) => {
