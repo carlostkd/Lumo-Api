@@ -1,4 +1,4 @@
-//fixed app crach by timeout 16.10
+//fixed app crach by timeout 16.10.25
 const express = require('express');
 const puppeteer = require('puppeteer-core');
 const { executablePath } = require('puppeteer');
