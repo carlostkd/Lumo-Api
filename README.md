@@ -275,7 +275,13 @@ Witness intelligent follow-up questions that keep the conversation lively
 - **Issue**: Invalid token errors.
   - **Solution**: Ensure you are passing the correct token in the `Authorization` header.
 
+## 🙏 Support the Project
 
+If you find Lumo API useful, consider buying me a coffee (or a whole espresso machine). 
+
+Your donation helps keep the AI sharp, the jokes fresh, and the servers humming.  
+
+[Donate Here ➡️](https://donate.stripe.com/8wM6pe9DD99xgAofYZ?locale=en&__embed_source=buy_btn_1Oi3L8AtK4E7C1uiKA4WkkML)
 
 ## Contributing 💡
 
