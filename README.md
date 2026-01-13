@@ -1,6 +1,10 @@
 
 # Lumo API 🧠 
 
+A new Headless version of the Api just arrived :
+[Take a Look](https://github.com/carlostkd/Lumo-Api-V2)
+
+
 <img src="https://pmecdn.protonweb.com/image-transformation/?s=s&image=Lumo_OG_b782facdaf.png" width="300" height="150" />
 
 # Please read the ![version-3](version-3.0-README.md) for extended features.
