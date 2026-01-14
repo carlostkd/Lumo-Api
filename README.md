@@ -7,6 +7,73 @@ A new Headless version of the Api just arrived :
 
 <img src="https://pmecdn.protonweb.com/image-transformation/?s=s&image=Lumo_OG_b782facdaf.png" width="300" height="150" />
 
+### The new feature Projects just arrived on time 
+
+### New commands 
+
+*** Create Project ***
+
+```javascript
+curl -X POST http://localhost:3000/api/create-project \
+  -H "Authorization: Bearer YOUR_SECRET_TOKEN_HERE" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "projectName": "My Test Project",
+    "projectInstructions": "Use a formal tone and be concise"
+  }'
+``` 
+
+*** Upload File or multiple files to the Project ***
+
+```javascript
+curl -X POST http://localhost:3000/api/upload-file \
+  -H "Authorization: Bearer YOUR_SECRET_TOKEN_HERE" \
+  -F "files=@./test2.txt"
+```
+
+*** Send prompt to sumarize the files ***
+
+```javascript
+curl -X POST http://localhost:3000/api/send-prompt \
+  -H "Authorization: Bearer YOUR_SECRET_TOKEN_HERE" \
+  -H "Content-Type: application/json" \
+  -d '{ "prompt": "Summarize the last uploaded file." }'
+```
+
+*** To delete files you can use the same previous commands ***
+
+### Note: In projects is not possible to send files and prompt together
+
+*** Leave the project and return to normal chat ***
+
+```javascript
+curl -X POST http://localhost:3000/api/start-new-chat \
+  -H "Authorization: Bearer YOUR_SECRET_TOKEN_HERE" \
+  -H "Content-Type: application/json"
+```
+
+*** To Open a project you need to know the project name ***
+
+```javascript
+curl -X POST http://localhost:3000/api/open-project \
+  -H "Authorization: Bearer YOUR_SECRET_TOKEN_HERE" \
+  -H "Content-Type: application/json" \
+  -d '{ "projectName": "My Project" }'
+```
+
+### The new projects feature was exaustive tested but i let for now the debug code 
+### If you find any bug 🪲 please open a issue with the log attached.
+
+### I will try to replicate this on the V2 but no promisses...
+
+
+
+
+
+
+
+
+
 # Please read the ![version-3](version-3.0-README.md) for extended features.
 
 
