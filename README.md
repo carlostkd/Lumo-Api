@@ -1,6 +1,8 @@
 
 # Lumo API 🧠 
 
+## NEW Introducing [Lumo Chat](https://github.com/carlostkd/lumo-chat)
+
 A new Headless version of the Api just arrived :
 [Take a Look](https://github.com/carlostkd/Lumo-Api-V2)
 
