@@ -1,6 +1,19 @@
 
 # Lumo API 🧠 
 
+<div align="center">
+
+## 01.04.2026
+
+## 📢 Important Update
+
+Since Proton is about to release the Official Lumo Api this repository and all Lumo Api repositories will no longer be maintained.
+You can Follow the Api developement: [HERE](https://carlostkd.ch/api-tracker)
+
+</div>
+
+
+
 ## NEW Introducing [Lumo Chat](https://github.com/carlostkd/lumo-chat)
 
 A new Headless version of the Api just arrived :
