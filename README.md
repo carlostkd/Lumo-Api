@@ -8,6 +8,9 @@
 ## 📢 Important Update
 
 Since Proton is about to release the Official Lumo Api this repository and all Lumo Api repositories will no longer be maintained.
+
+You can get an [API KEY](https://carlostkd.ch/api-tracker/keys.php)
+
 You can Follow the Api developement alongside with some apps that are using the official API ->> : [HERE](https://carlostkd.ch/api-tracker/)
 
 </div>
