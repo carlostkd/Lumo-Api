@@ -13,6 +13,9 @@ You can get an [API KEY](https://carlostkd.ch/api-tracker/keys.php)
 
 You can Follow the Api developement alongside with some apps that are using the official API ->> : [HERE](https://carlostkd.ch/api-tracker/)
 
+# Released ProtonSync 
+You can now sync your contacts and calendar with native Android contacts and calendar [link](https://github.com/carlostkd/ProtonSync)
+
 </div>
 
 
