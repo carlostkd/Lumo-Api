@@ -115,7 +115,11 @@ setInterval(() => {
 app.use(cors());
 app.use(bodyParser.json());
 
-const SECRET_TOKEN = 'YOUR_SECRET_TOKEN_HERE';
+const SECRET_TOKEN = process.env.SECRET_TOKEN;
+if (!SECRET_TOKEN) {
+  console.error('❌ SECRET_TOKEN environment variable is not set. Refusing to start.');
+  process.exit(1);
+}
 let browser, page;
 let loggedIn = false;
 let webSearchEnabled = false;
